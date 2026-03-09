@@ -39,7 +39,7 @@ jobs:
           poetry config virtualenvs.in-project true
 
       - name: Install dependencies
-        run: poetry update --no-interaction
+        run: poetry install --with dev --no-interaction
 
       - name: Run tests with coverage
         run: poetry run pytest tests  --cov=python-actions-demo --cov-report=xml --cov-report=python-actions-demo

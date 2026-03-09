@@ -1,4 +1,4 @@
-from src.models import Book
+from python_actions_demo.models import Book
 
 # step 1. simple test
 def test_book_info():

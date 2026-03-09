@@ -25,7 +25,7 @@ jobs:
           poetry config virtualenvs.in-project true
 
       - name: Install dependencies
-        run: poetry update --no-interaction
+        run: poetry install --with dev --no-interaction
 
       - name: Run tests
         run: poetry run pytest tests

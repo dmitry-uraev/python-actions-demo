@@ -1,5 +1,5 @@
 import pytest
-from src.models import Book
+from python_actions_demo.models import Book
 
 @pytest.mark.parametrize("start_price,increase,expected", [
     (25.0, 5.0, 30.0),

@@ -1,5 +1,5 @@
 import pytest
-from src.models import Book, Library
+from python_actions_demo.models import Book, Library
 
 
 # test add book to library
