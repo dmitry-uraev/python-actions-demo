@@ -1,5 +1,6 @@
 from python_actions_demo.models import Book
 
+
 # step 1. simple test
 def test_book_info():
     book = Book(1, "Fluent Python", 25.).get_info()

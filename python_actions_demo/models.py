@@ -1,5 +1,6 @@
 class Book:
     """Book model"""
+
     def __init__(self, id: int, title: str, price: float):
         self.id = id
         self.title = title
@@ -11,11 +12,13 @@ class Book:
     def increase_price(self, amount: float):
         self.price += amount
 
+
 class Library:
     """Library model"""
+
     def __init__(self, name: str):
         self.name = name
-        self.books = {}
+        self.books: dict = {}
 
     def add_book(self, book):
         if book.id in self.books:

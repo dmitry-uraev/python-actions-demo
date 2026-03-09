@@ -1,6 +1,8 @@
 {
     "cSpell.words": [
         "ensurepath",
+        "isort",
+        "mypy",
         "pipx",
         "pypoetry"
     ],

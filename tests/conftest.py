@@ -1,7 +1,6 @@
 import pytest
 
-from python_actions_demo.models import Library
-from python_actions_demo.models import Book
+from python_actions_demo.models import Book, Library
 
 
 @pytest.fixture
