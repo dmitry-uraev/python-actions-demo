@@ -1,0 +1,25 @@
+[project]
+name = "python-actions-demo"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "dmitry",email = "uraev.dima@yandex.ru"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "pytest (>=9.0.2,<10.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+markers = [
+    "book: Тесты для книг",
+    "library: Тесты на библиотеку",
+    "slow: Медленные тесты для пропуска в CI",
+]
