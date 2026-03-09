@@ -8,7 +8,7 @@ on:
 
 jobs:
   run-core-tests:
-    name: Run core tests (py${{ matrix.python-version }})
+    name: "Run core tests (poetry with cache and coverage) (py${{ matrix.python-version }})"
     runs-on: ubuntu-latest
 
     strategy:

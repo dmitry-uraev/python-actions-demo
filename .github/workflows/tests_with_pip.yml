@@ -9,7 +9,7 @@ on:
 jobs:
   # just tests
   run-core-tests:
-    name: Run core tests
+    name: Run core tests (pip)
     runs-on: ubuntu-latest
 
     steps:

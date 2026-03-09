@@ -8,7 +8,7 @@ on:
 
 jobs:
   run-core-tests:
-    name: Run core tests (py${{ matrix.python-version }})
+    name: "Run core tests (poetry): (py${{ matrix.python-version }})"
     runs-on: ubuntu-latest
 
     steps:
@@ -25,7 +25,7 @@ jobs:
           poetry config virtualenvs.in-project true
 
       - name: Install dependencies
-        run: poetry install --with dev --no-interaction
+        run: poetry install --no-interaction
 
       - name: Run tests
         run: poetry run pytest tests
