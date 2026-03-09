@@ -28,12 +28,24 @@ poetry init
 poetry install
 ```
 
+Virtual environment (already included):
+
+```bash
+poetry env info
+```
+
 ### pip
 
 Store all requirements in file:
 
 ```bash
 pip freeze requirements.txt > requirements.txt
+```
+
+Virtual environment:
+
+```bash
+python -m venv .venv
 ```
 
 ## Tests
