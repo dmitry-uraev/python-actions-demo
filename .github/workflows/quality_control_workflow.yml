@@ -1,0 +1,39 @@
+name: CI/CD Pipeline For Quality Control
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint-test:
+    name: "Lint (poetry)"
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+
+      - name: Install Poetry
+        run: |
+          pipx install poetry
+          poetry config virtualenvs.in-project true
+
+      - name: Install dependencies
+        run: poetry install --with dev --no-interaction
+
+      - name: Ruff (linter/formatter)
+        run: poetry run ruff check . --exit-non-zero-on-fix
+
+      - name: Black (formatter check)
+        run: poetry run black --check --diff .
+
+      - name: Mypy (type checking)
+        run: poetry run mypy python_actions_demo/ tests/ --install-types --non-interactive
+
+      - name: isort (imports)
+        run: poetry run isort . --check-only --diff
