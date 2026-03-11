@@ -1,0 +1,34 @@
+name: Project autotests with Poetry
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  run-project-autotests:
+    name: "Run autotests using poetry and pytest"
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1. copy repository files to running machine
+      - uses: actions/checkout@v4
+
+      # Step 2. install python
+      - name: Set up Python 3.14
+        uses: actions/setup-python@v5
+
+      # Step 3. Install poetry
+      - name: Install poetry
+        run: |
+          pipx install poetry
+          poetry config virtualenvs.in-project true
+
+      # Step 4. Install dependencies
+      - name: Install dependencies
+        run: poetry install --with dev --no-interaction
+
+      # Step 5. Run tests
+      - name: Run autotests
+        run: poetry run pytest tests
