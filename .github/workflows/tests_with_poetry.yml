@@ -18,6 +18,8 @@ jobs:
       # Step 2. install python
       - name: Set up Python 3.14
         uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
 
       # Step 3. Install poetry
       - name: Install poetry
